@@ -1,0 +1,107 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int                @id @default(autoincrement())
+  username      String             @unique
+  passwordHash  String             @map("password_hash")
+  name          String
+  role          String
+  phone         String?
+  status        String             @default("active")
+  createdAt     DateTime           @default(now()) @map("created_at")
+  updatedAt     DateTime           @updatedAt @map("updated_at")
+  createdOrders SampleOrder[]      @relation("SampleOrderCreator")
+  operatedOrders SampleOrder[]     @relation("SampleOrderOperator")
+  inspectedOrders SampleOrder[]    @relation("SampleOrderInspector")
+  operatedSteps SampleStep[]       @relation("StepOperator")
+  inspectedSteps SampleStep[]      @relation("StepLatestInspector")
+  attachments   SampleAttachment[] @relation("AttachmentUploader")
+  stepLogs      StepOperationLog[] @relation("StepLogOperator")
+
+  @@map("users")
+}
+
+model SampleOrder {
+  id            Int                @id @default(autoincrement())
+  sampleNo      String             @unique @map("sample_no")
+  projectName   String             @map("project_name")
+  operatorUserId Int?              @map("operator_user_id")
+  inspectorUserId Int?             @map("inspector_user_id")
+  customerName  String?            @map("customer_name")
+  material      String?
+  pressTonnage  String?            @map("press_tonnage")
+  startDate     DateTime?          @map("start_date")
+  reportStoragePath String         @map("report_storage_path")
+  remark        String?
+  status        String             @default("draft")
+  createdBy     Int                @map("created_by")
+  createdAt     DateTime           @default(now()) @map("created_at")
+  updatedAt     DateTime           @updatedAt @map("updated_at")
+  creator       User               @relation("SampleOrderCreator", fields: [createdBy], references: [id])
+  operatorUser  User?              @relation("SampleOrderOperator", fields: [operatorUserId], references: [id])
+  inspectorUser User?              @relation("SampleOrderInspector", fields: [inspectorUserId], references: [id])
+  attachments   SampleAttachment[]
+  steps         SampleStep[]
+
+  @@map("sample_orders")
+}
+
+model SampleAttachment {
+  id            Int         @id @default(autoincrement())
+  sampleOrderId Int         @map("sample_order_id")
+  sampleStepId  Int?        @map("sample_step_id")
+  fileName      String      @map("file_name")
+  filePath      String      @map("file_path")
+  fileType      String      @map("file_type")
+  uploadedBy    Int         @map("uploaded_by")
+  createdAt     DateTime    @default(now()) @map("created_at")
+  sampleOrder   SampleOrder @relation(fields: [sampleOrderId], references: [id], onDelete: Cascade)
+  sampleStep    SampleStep? @relation(fields: [sampleStepId], references: [id], onDelete: Cascade)
+  uploader      User        @relation("AttachmentUploader", fields: [uploadedBy], references: [id])
+
+  @@map("sample_attachments")
+}
+
+model SampleStep {
+  id              Int                @id @default(autoincrement())
+  sampleOrderId   Int                @map("sample_order_id")
+  stepName        String             @map("step_name")
+  stepOrder       Int                @map("step_order")
+  operatorUserId  Int?               @map("operator_user_id")
+  status          String             @default("pending")
+  startedAt       DateTime?          @map("started_at")
+  completedAt     DateTime?          @map("completed_at")
+  latestInspectorUserId Int?         @map("latest_inspector_user_id")
+  latestInspectionAt DateTime?       @map("latest_inspection_at")
+  remark          String?
+  createdAt       DateTime           @default(now()) @map("created_at")
+  updatedAt       DateTime           @updatedAt @map("updated_at")
+  sampleOrder     SampleOrder        @relation(fields: [sampleOrderId], references: [id], onDelete: Cascade)
+  operatorUser    User?              @relation("StepOperator", fields: [operatorUserId], references: [id])
+  latestInspectorUser User?          @relation("StepLatestInspector", fields: [latestInspectorUserId], references: [id])
+  attachments     SampleAttachment[]
+  operationLogs   StepOperationLog[]
+
+  @@unique([sampleOrderId, stepOrder])
+  @@map("sample_steps")
+}
+
+model StepOperationLog {
+  id             Int           @id @default(autoincrement())
+  sampleStepId   Int           @map("sample_step_id")
+  action         String
+  operatorUserId Int           @map("operator_user_id")
+  actionTime     DateTime      @default(now()) @map("action_time")
+  note           String?
+  sampleStep     SampleStep    @relation(fields: [sampleStepId], references: [id], onDelete: Cascade)
+  operator       User          @relation("StepLogOperator", fields: [operatorUserId], references: [id])
+
+  @@map("step_operation_logs")
+}

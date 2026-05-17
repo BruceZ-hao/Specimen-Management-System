@@ -1,0 +1,35 @@
+{
+  "name": "xingye-sample-manager",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Desktop and mobile sample management system for powder metallurgy workflows.",
+  "author": "Xingye",
+  "main": "apps/desktop/main.cjs",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:server": "npm --workspace apps/server run start:dev",
+    "dev:admin": "npm --workspace apps/admin run dev",
+    "dev:mini": "npm --workspace apps/miniprogram run dev:h5",
+    "build": "npm run build --workspaces",
+    "build:desktop-icon": "node scripts/generate-desktop-icon.mjs",
+    "build:desktop-assets": "node scripts/build-desktop-assets.mjs",
+    "start:desktop": "electron .",
+    "dist:desktop": "node scripts/build-windows-installer.mjs",
+    "build:desktop-unpacked": "node scripts/build-electron-unpacked.mjs",
+    "dist:desktop-setup": "node scripts/build-setup-exe.mjs",
+    "build:webview2-portable": "node scripts/build-webview2-portable.mjs",
+    "build:webview2-update-package": "node scripts/build-webview2-update-package.mjs",
+    "dist:webview2-setup": "node scripts/build-webview2-setup.mjs",
+    "build:portable": "node scripts/build-portable.mjs",
+    "prisma:generate": "npm --workspace apps/server run prisma:generate",
+    "prisma:migrate": "npm --workspace apps/server run prisma:migrate",
+    "seed": "npm --workspace apps/server run seed"
+  },
+  "devDependencies": {
+    "electron": "^32.2.0",
+    "electron-builder": "^25.1.8"
+  }
+}

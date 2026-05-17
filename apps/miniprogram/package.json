@@ -1,0 +1,14 @@
+{
+  "name": "@sample/miniprogram",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev:h5": "echo \"Use HBuilderX to run apps/miniprogram as H5.\"",
+    "dev:app": "echo \"Use HBuilderX to run apps/miniprogram as App.\"",
+    "dev:mp-weixin": "echo \"Use HBuilderX to run apps/miniprogram as WeChat Mini Program after filling mp-weixin.appid.\"",
+    "build": "echo \"Use HBuilderX cloud package or local package for App / WeChat Mini Program builds.\""
+  },
+  "dependencies": {
+    "@sample/shared": "0.1.0"
+  }
+}

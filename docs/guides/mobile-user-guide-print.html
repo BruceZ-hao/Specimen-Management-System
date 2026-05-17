@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xingye | JNRon 移动端使用指南</title>
+    <link rel="stylesheet" href="./guide-print.css" />
+  </head>
+  <body>
+    <section class="page cover">
+      <div class="cover-grid">
+        <div class="cover-main">
+          <div class="cover-mark">
+            <span class="cover-icon"></span>
+            Xingye | JNRon
+          </div>
+          <div class="cover-title">移动端使用指南</div>
+          <div class="cover-subtitle">
+            面向现场操作员、检测员与管理人员的 Android 操作版手册，覆盖登录、服务器配置、任务处理、报告上传与应用更新。
+          </div>
+          <div class="cover-tags">
+            <span class="cover-tag">Android App</span>
+            <span class="cover-tag">现场操作流程</span>
+            <span class="cover-tag">扫码配置与升级</span>
+          </div>
+        </div>
+        <div class="cover-side">
+          <div class="cover-panel">
+            <img src="../../apps/miniprogram/src/static/branding/icon-512.png" alt="JNRon App 图标" />
+            <h2>JNRon Sample Manager</h2>
+            <div class="cover-meta">
+              <div>
+                <strong>Company</strong>
+                Xingye | JNRon
+              </div>
+              <div>
+                <strong>Document</strong>
+                Mobile User Guide
+              </div>
+              <div>
+                <strong>Date</strong>
+                2026-05-17
+              </div>
+              <div>
+                <strong>Audience</strong>
+                Operator / Inspector / Admin
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <span><strong>Xingye | JNRon</strong> 样品管理系统</span>
+        <span>第 1 / 4 页</span>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="title-row">
+        <div>
+          <div class="eyebrow">Quick Start</div>
+          <h1 class="page-title">1. 登录与服务器配置</h1>
+          <p class="lead">首次使用建议先完成服务器配置，再输入账号密码登录。登录页和“我的”页都能进入服务器配置。</p>
+        </div>
+        <div class="page-number-pill"><strong>02</strong>Mobile</div>
+      </div>
+      <div class="rule"></div>
+
+      <div class="two-col">
+        <div class="stack">
+          <div class="soft-card">
+            <h3>使用前准备</h3>
+            <ul class="mini-list">
+              <li>管理员已启动桌面端后台服务。</li>
+              <li>手机已安装 JNRon Android App。</li>
+              <li>已获取账号密码，以及最新服务器二维码。</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>登录步骤</h3>
+            <div class="steps">
+              <div class="step">
+                <div class="step-index">1</div>
+                <div class="step-body">
+                  <strong>确认当前服务器地址</strong>
+                  <span>登录页会显示当前后台地址，地址错误时先不要继续输入密码。</span>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-index">2</div>
+                <div class="step-body">
+                  <strong>输入账号与密码</strong>
+                  <span>点击“进入工作台”后，系统会自动跳到对应角色的任务页。</span>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-index">3</div>
+                <div class="step-body">
+                  <strong>连接失败时打开服务器配置</strong>
+                  <span>优先扫码写入最新地址，其次再手动输入公网地址。</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout">
+            <h3>服务器配置推荐顺序</h3>
+            <div class="steps">
+              <div class="step">
+                <div class="step-index">1</div>
+                <div class="step-body">
+                  <strong>扫描服务器二维码</strong>
+                  <span>最快，适合现场分发。</span>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-index">2</div>
+                <div class="step-body">
+                  <strong>从相册识别二维码</strong>
+                  <span>适合管理员通过微信发送二维码图片。</span>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-index">3</div>
+                <div class="step-body">
+                  <strong>手动输入完整地址</strong>
+                  <span>例如 `https://demo.cpolar.top`，不要自行追加 `/api`。</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack">
+          <div>
+            <div class="phone-shot">
+              <div class="phone-shell">
+                <div class="phone-status"><span>09:41</span><span>5G 98%</span></div>
+                <div class="phone-body">
+                  <div class="phone-hero">
+                    <span class="mini-brand">JNRon</span>
+                    <h4>账号登录</h4>
+                    <p>操作员、检测员和管理员都从这里进入工作台。</p>
+                  </div>
+                  <div class="mini-panel">
+                    <div class="mini-title">当前服务器</div>
+                    <div class="mini-subtitle">https://demo.xingye-sample.cn</div>
+                    <div class="mini-input">账号：admin</div>
+                    <div class="mini-input">密码：••••••••</div>
+                    <div class="mini-button-row">
+                      <div class="mini-button ghost">服务器配置</div>
+                      <div class="mini-button blue">进入工作台</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="caption">登录页示意：先看服务器地址，再输入账号密码。</div>
+          </div>
+
+          <div>
+            <div class="phone-shot">
+              <div class="phone-shell">
+                <div class="phone-status"><span>09:42</span><span>5G 97%</span></div>
+                <div class="phone-body">
+                  <div class="mini-panel">
+                    <div class="mini-title">服务器配置</div>
+                    <div class="mini-subtitle">支持扫码、相册识别和手动输入三种方式。</div>
+                    <div class="mini-input">https://demo.xingye-sample.cn</div>
+                    <div class="qr-box">
+                      <img class="qr-image" src="../../apps/miniprogram/src/unpackage/release/apk/mobile-release-qr-20260517.png" alt="二维码示意" />
+                      <div class="mini-muted">
+                        管理员发来的二维码可直接写入后台地址。扫码成功后，App 会自动保存并返回。
+                      </div>
+                    </div>
+                    <div class="mini-button-row">
+                      <div class="mini-button primary">扫描配置服务器</div>
+                      <div class="mini-button ghost">从相册识别</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="caption">服务器配置页示意：推荐优先扫码写入最新地址。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span><strong>Xingye | JNRon</strong> 样品管理系统</span>
+        <span>第 2 / 4 页</span>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="title-row">
+        <div>
+          <div class="eyebrow">Task Flow</div>
+          <h1 class="page-title">2. 项目任务、工序与检测报告</h1>
+          <p class="lead">操作员负责认领并完成工序，检测员负责在已完成工序上上传检测报告，管理员可在移动端临时补录和查看。</p>
+        </div>
+        <div class="page-number-pill"><strong>03</strong>Workflow</div>
+      </div>
+      <div class="rule"></div>
+
+      <div class="two-col equal">
+        <div>
+          <div class="phone-shot">
+            <div class="phone-shell">
+              <div class="phone-status"><span>09:48</span><span>5G 95%</span></div>
+              <div class="phone-body">
+                <div class="mini-panel">
+                  <div class="mini-title">项目任务</div>
+                  <div class="mini-subtitle">按角色显示“待认领 / 我的项目 / 待上传报告”等视图。</div>
+                  <div class="mini-pill-row">
+                    <div class="mini-pill">待认领项目</div>
+                    <div class="mini-pill">我的项目</div>
+                    <div class="mini-pill">已完成项目</div>
+                  </div>
+                  <div class="mini-task-card">
+                    <div class="mini-task-head">
+                      <strong>SHB001 / 粉末冶金齿轮</strong>
+                      <span class="mini-tag">进行中</span>
+                    </div>
+                    <div class="mini-muted">材料：Fe-Cu-C | 操作员：操作员A</div>
+                    <div class="mini-progress"><span style="width: 66%"></span></div>
+                    <div class="mini-step">
+                      <strong>1. 成型</strong>
+                      <div class="mini-muted">已完成</div>
+                    </div>
+                    <div class="mini-step">
+                      <strong>2. 烧结</strong>
+                      <div class="mini-muted">进行中，点击进入工序详情</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="caption">任务页示意：项目进度、工序状态和负责人都能在列表中快速确认。</div>
+        </div>
+
+        <div>
+          <div class="phone-shot">
+            <div class="phone-shell">
+              <div class="phone-status"><span>09:50</span><span>5G 95%</span></div>
+              <div class="phone-body">
+                <div class="mini-panel">
+                  <div class="mini-title">工序详情</div>
+                  <div class="mini-subtitle">查看时间、路径、检测报告，并执行当前角色允许的操作。</div>
+                  <div class="mini-step">
+                    <strong>烧结工序</strong>
+                    <div class="mini-muted">状态：已完成 | 报告路径：D:\Reports\JNRon</div>
+                  </div>
+                  <div class="mini-report">
+                    <strong>待上传检测报告</strong>
+                    <div class="mini-muted">操作员已完成该工序，请检测员尽快补充报告图片。</div>
+                  </div>
+                  <div class="mini-button-row">
+                    <div class="mini-button primary">上传检测报告</div>
+                    <div class="mini-button ghost">查看历史报告</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="caption">工序详情示意：检测员在这里上传报告，操作员在这里开始或完成工序。</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 12mm" class="grid-2">
+        <div class="soft-card">
+          <h3>操作员流程</h3>
+          <ul class="mini-list">
+            <li>从“待认领项目”进入第一道待开始工序。</li>
+            <li>点击“开始并认领项目”后，项目会自动归属给当前操作员。</li>
+            <li>处理完成后点击“完成工序”，再进入下一道工序。</li>
+            <li>如果项目已被别人认领，当前账号不能继续接手。</li>
+          </ul>
+        </div>
+        <div class="soft-card">
+          <h3>检测员流程</h3>
+          <ul class="mini-list">
+            <li>从“待上传报告”进入已完成的工序。</li>
+            <li>点击“上传检测报告”，支持拍照或从相册选图。</li>
+            <li>上传后可查看、分享或删除报告附件。</li>
+            <li>通常只有项目绑定的检测员本人可以继续维护报告。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span><strong>Xingye | JNRon</strong> 样品管理系统</span>
+        <span>第 3 / 4 页</span>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="title-row">
+        <div>
+          <div class="eyebrow">Update & Support</div>
+          <h1 class="page-title">3. 应用更新、我的页面与常见问题</h1>
+          <p class="lead">“我的”页面负责汇总账号信息、服务器地址、快捷入口与应用更新。二维码升级是现场切换新版本最快的方式。</p>
+        </div>
+        <div class="page-number-pill"><strong>04</strong>Support</div>
+      </div>
+      <div class="rule"></div>
+
+      <div class="two-col">
+        <div class="stack">
+          <div>
+            <div class="phone-shot">
+              <div class="phone-shell">
+                <div class="phone-status"><span>10:02</span><span>5G 93%</span></div>
+                <div class="phone-body">
+                  <div class="mini-panel">
+                    <div class="mini-title">我的</div>
+                    <div class="mini-subtitle">查看账号信息、服务器地址、任务统计和常用入口。</div>
+                    <div class="mini-stat-grid">
+                      <div class="mini-stat"><strong>8</strong><span>待处理</span></div>
+                      <div class="mini-stat"><strong>3</strong><span>进行中</span></div>
+                      <div class="mini-stat"><strong>21</strong><span>已完成</span></div>
+                    </div>
+                    <div class="mini-task-card">
+                      <div class="mini-row"><strong>服务器地址</strong><span class="mini-tag blue">已配置</span></div>
+                      <div class="mini-muted">https://demo.xingye-sample.cn</div>
+                    </div>
+                    <div class="mini-button-row">
+                      <div class="mini-button ghost">服务器配置</div>
+                      <div class="mini-button blue">应用更新</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="caption">“我的”页示意：账号、统计、服务器地址和升级入口都在这里。</div>
+          </div>
+
+          <div class="banner">
+            推荐现场顺序：先扫码写入服务器地址，再登录处理任务；管理员发布新版本后，优先扫描下载二维码或在“应用更新”页检查当前服务器版本。
+          </div>
+        </div>
+
+        <div class="stack">
+          <div>
+            <div class="phone-shot">
+              <div class="phone-shell">
+                <div class="phone-status"><span>10:04</span><span>5G 93%</span></div>
+                <div class="phone-body">
+                  <div class="mini-panel">
+                    <div class="mini-title">应用更新</div>
+                    <div class="mini-subtitle">检查服务器当前分发版本，或直接扫描管理员提供的下载二维码。</div>
+                    <div class="mini-task-card">
+                      <div class="mini-row"><strong>本机版本</strong><span class="mini-tag">v1.4.2</span></div>
+                      <div class="mini-row" style="margin-top: 8px"><strong>服务端版本</strong><span class="mini-tag blue">v1.5.0</span></div>
+                    </div>
+                    <div class="qr-box">
+                      <img class="qr-image" src="../../apps/miniprogram/src/unpackage/release/apk/mobile-release-qr-20260517.png" alt="下载二维码" />
+                      <div class="mini-muted">
+                        扫描当前版本二维码后，App 会读取指定版本信息，再执行下载和安装。
+                      </div>
+                    </div>
+                    <div class="mini-button-row">
+                      <div class="mini-button ghost">检查当前版本</div>
+                      <div class="mini-button blue">下载并安装</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="caption">应用更新页示意：支持服务器检查和二维码指定版本更新。</div>
+          </div>
+
+          <div class="callout">
+            <h3>常见问题</h3>
+            <ul class="mini-list">
+              <li>扫码后仍无法连接：先确认桌面端服务已启动，再让管理员重新发送最新地址二维码。</li>
+              <li>看不到任务：先核对账号角色，再检查项目是否已进入当前角色可见状态。</li>
+              <li>不能上传报告：只有已完成工序才允许上传，且当前账号需要检测员或管理员权限。</li>
+              <li>无法安装更新：确认设备为 Android，并按系统提示允许当前应用继续安装。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span><strong>Xingye | JNRon</strong> 样品管理系统</span>
+        <span>第 4 / 4 页</span>
+      </div>
+    </section>
+  </body>
+</html>

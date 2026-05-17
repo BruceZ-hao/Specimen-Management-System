@@ -1,0 +1,51 @@
+{
+  "appId": "com.note.desktop.sample-management",
+  "productName": "JNRon Sample Manager",
+  "directories": {
+    "output": "dist-electron"
+  },
+  "asar": false,
+  "files": [
+    "apps/desktop/**/*",
+    "apps/server/dist/**/*",
+    "apps/server/node_modules/**/*",
+    "apps/server/prisma/**/*",
+    "apps/admin/dist/**/*",
+    "packages/shared/dist/**/*",
+    "packages/shared/package.json",
+    "node_modules/**/*",
+    "package.json"
+  ],
+  "extraResources": [
+    {
+      "from": "desktop-runtime",
+      "to": "desktop-runtime"
+    }
+  ],
+  "extraMetadata": {
+    "main": "apps/desktop/main.cjs"
+  },
+  "win": {
+    "icon": "apps/desktop/assets/app-icon.ico",
+    "signAndEditExecutable": false,
+    "target": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      }
+    ]
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "installerIcon": "apps/desktop/assets/app-icon.ico",
+    "uninstallerIcon": "apps/desktop/assets/app-icon.ico",
+    "installerHeaderIcon": "apps/desktop/assets/app-icon.ico",
+    "shortcutName": "JNRon Sample Manager"
+  },
+  "artifactName": "${productName}-Setup-${version}.${ext}"
+}

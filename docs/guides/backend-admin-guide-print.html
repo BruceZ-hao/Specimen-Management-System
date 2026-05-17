@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xingye | JNRon 后端管理端使用指南</title>
+    <link rel="stylesheet" href="./guide-print.css" />
+  </head>
+  <body>
+    <section class="page cover">
+      <div class="cover-grid">
+        <div class="cover-main">
+          <div class="cover-mark">
+            <span class="cover-icon"></span>
+            Xingye | JNRon
+          </div>
+          <div class="cover-title">后端管理端使用指南</div>
+          <div class="cover-subtitle">
+            面向管理员的后台网页与桌面端运维手册，覆盖样品项目、账号管理、服务器配置、桌面端升级和移动端版本分发。
+          </div>
+          <div class="cover-tags">
+            <span class="cover-tag">Admin Console</span>
+            <span class="cover-tag">Project & User Management</span>
+            <span class="cover-tag">Version Distribution</span>
+          </div>
+        </div>
+        <div class="cover-side">
+          <div class="cover-panel">
+            <img src="../../apps/admin/public/favicon.png" alt="JNRon 后台图标" />
+            <h2>Admin Operations Manual</h2>
+            <div class="cover-meta">
+              <div>
+                <strong>Company</strong>
+                Xingye | JNRon
+              </div>
+              <div>
+                <strong>Document</strong>
+                Backend Admin Guide
+              </div>
+              <div>
+                <strong>Date</strong>
+                2026-05-17
+              </div>
+              <div>
+                <strong>Audience</strong>
+                Administrator
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <span><strong>Xingye | JNRon</strong> 样品管理系统</span>
+        <span>第 1 / 5 页</span>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="title-row">
+        <div>
+          <div class="eyebrow">Admin Console</div>
+          <h1 class="page-title">1. 后台首页与样品管理</h1>
+          <p class="lead">管理员登录后默认进入“样品管理”。这里负责创建项目、维护工序顺序、上传图纸、纠正状态以及删除项目。</p>
+        </div>
+        <div class="page-number-pill"><strong>02</strong>Admin</div>
+      </div>
+      <div class="rule"></div>
+
+      <div class="stack">
+        <div class="browser-shot">
+          <div class="browser-toolbar">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">http://127.0.0.1:3000/samples</div>
+          </div>
+          <div class="browser-body">
+            <div class="browser-nav">
+              <div class="cover-mark" style="background: rgba(255,255,255,0.08); color: #93c5fd;">
+                <span class="cover-icon"></span>JNRon
+              </div>
+              <h4>样品管理后台</h4>
+              <p>项目、工序、账号和系统设置都集中在这里维护。</p>
+              <div class="nav-link active">样品管理</div>
+              <div class="nav-link">账号管理</div>
+              <div class="nav-link">设置</div>
+            </div>
+            <div class="browser-main">
+              <div class="browser-header">
+                <strong>样品管理</strong>
+                <span>通过关键字和状态筛选项目，并从列表进入详情、编辑或删除。</span>
+              </div>
+              <div class="browser-card">
+                <div class="browser-toolbar-row">
+                  <div class="browser-filters">
+                    <div class="browser-input wide">搜索样品编号 / 项目 / 客户</div>
+                    <div class="browser-select">状态：进行中</div>
+                    <div class="browser-button ghost">查询</div>
+                  </div>
+                  <div class="browser-button">新建样品单</div>
+                </div>
+                <table class="browser-table">
+                  <thead>
+                    <tr>
+                      <th>样品编号</th>
+                      <th>项目名称</th>
+                      <th>客户</th>
+                      <th>材料</th>
+                      <th>状态</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>SHB001</td>
+                      <td>粉末冶金齿轮</td>
+                      <td>兴业客户A</td>
+                      <td>Fe-Cu-C</td>
+                      <td><span class="status-dot blue">进行中</span></td>
+                      <td>详情 / 编辑 / 删除</td>
+                    </tr>
+                    <tr>
+                      <td>XM-052</td>
+                      <td>同步轮样件</td>
+                      <td>兴业客户B</td>
+                      <td>SUS304</td>
+                      <td><span class="status-dot amber">草稿</span></td>
+                      <td>详情 / 编辑 / 删除</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="soft-card">
+            <h3>新建样品单</h3>
+            <p>填写样品编号、项目名称、报告存储路径、客户、材料、压机吨位、开始日期和工序顺序。</p>
+          </div>
+          <div class="soft-card">
+            <h3>列表筛选</h3>
+            <p>支持按编号、项目名、客户名与状态快速过滤，适合日常排查和追踪。</p>
+          </div>
+          <div class="soft-card">
+            <h3>删除项目</h3>
+            <p>会同时删除关联工序和附件，执行前建议先确认相关图纸与报告已另行归档。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span><strong>Xingye | JNRon</strong> 样品管理系统</span>
+        <span>第 2 / 5 页</span>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="title-row">
+        <div>
+          <div class="eyebrow">Project Detail</div>
+          <h1 class="page-title">2. 项目详情、工序状态与归属重置</h1>
+          <p class="lead">项目详情页汇总了基础信息、项目状态、负责人、图纸附件与工序时间线。管理员可以在这里手动修正状态或重置归属。</p>
+        </div>
+        <div class="page-number-pill"><strong>03</strong>Detail</div>
+      </div>
+      <div class="rule"></div>
+
+      <div class="two-col">
+        <div class="stack">
+          <div class="browser-shot">
+            <div class="browser-toolbar">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-url">http://127.0.0.1:3000/samples/1</div>
+            </div>
+            <div class="browser-body">
+              <div class="browser-nav">
+                <div class="nav-link active">样品详情</div>
+                <div class="nav-link">返回列表</div>
+                <div class="nav-link">编辑项目</div>
+              </div>
+              <div class="browser-main">
+                <div class="browser-header">
+                  <strong>SHB001 - 粉末冶金齿轮</strong>
+                  <span>当前项目状态、负责人归属和每道工序的进度都在这个页面集中维护。</span>
+                </div>
+                <div class="split-info">
+                  <div class="label-block">
+                    <strong>项目状态</strong>
+                    <span>进行中</span>
+                  </div>
+                  <div class="label-block">
+                    <strong>报告存储路径</strong>
+                    <span>D:\Reports\JNRon</span>
+                  </div>
+                  <div class="label-block">
+                    <strong>项目操作员</strong>
+                    <span>操作员A</span>
+                  </div>
+                  <div class="label-block">
+                    <strong>项目检测员</strong>
+                    <span>检测员B</span>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <strong>1. 成型</strong>
+                  <span>已完成 | 报告 1 份 | 可继续查看附件</span>
+                </div>
+                <div class="timeline-item">
+                  <strong>2. 烧结</strong>
+                  <span>进行中 | 操作员A 正在处理</span>
+                </div>
+                <div class="timeline-item">
+                  <strong>3. 研磨</strong>
+                  <span>待开始 | 等待前序工序完成</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="caption">项目详情示意：状态编辑、负责人归属、图纸与工序时间线在同一页集中管理。</div>
+        </div>
+
+        <div class="stack">
+          <div class="callout">
+            <h3>状态修正建议</h3>
+            <ul class="mini-list">
+              <li>先确认现场真实状态，再手动改项目状态或工序状态。</li>
+              <li>补录历史项目时，可先建立工序，再按实际进度逐项修正。</li>
+              <li>人工调整后，后续业务流转仍可能继续刷新状态。</li>
+            </ul>
+          </div>
+
+          <div class="soft-card">
+            <h3>重置操作员归属</h3>
+            <p>会清空项目操作员，并把进行中的工序退回待开始，适合项目被错误认领或需要换人继续处理。</p>
+          </div>
+
+          <div class="soft-card">
+            <h3>重置检测员归属</h3>
+            <p>会清空项目检测员和工序上的最新检测员标记，适合检测员换人或交接失败后重新分配。</p>
+          </div>
+
+          <div class="banner">
+            已完成工序的“完成状态”不会因为重置归属而被抹掉，只会影响后续责任人和继续流转方式。
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span><strong>Xingye | JNRon</strong> 样品管理系统</span>
+        <span>第 3 / 5 页</span>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="title-row">
+        <div>
+          <div class="eyebrow">Users</div>
+          <h1 class="page-title">3. 账号管理与角色分配</h1>
+          <p class="lead">账号管理页用于新增用户、调整角色、停用账号和重置密码。角色分配准确，移动端的可见范围和按钮才会正确。</p>
+        </div>
+        <div class="page-number-pill"><strong>04</strong>Users</div>
+      </div>
+      <div class="rule"></div>
+
+      <div class="two-col">
+        <div class="stack">
+          <div class="browser-shot">
+            <div class="browser-toolbar">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-url">http://127.0.0.1:3000/users</div>
+            </div>
+            <div class="browser-body">
+              <div class="browser-nav">
+                <div class="nav-link">样品管理</div>
+                <div class="nav-link active">账号管理</div>
+                <div class="nav-link">设置</div>
+              </div>
+              <div class="browser-main">
+                <div class="browser-header">
+                  <strong>账号管理</strong>
+                  <span>创建账号、修改角色、停用账号和重置密码都从这里完成。</span>
+                </div>
+                <div class="browser-card">
+                  <div class="browser-toolbar-row">
+                    <div class="browser-filters">
+                      <div class="browser-input">账号：admin</div>
+                      <div class="browser-input">姓名：系统管理员</div>
+                      <div class="browser-select">角色：管理员</div>
+                    </div>
+                    <div class="browser-button">新增账号</div>
+                  </div>
+                  <table class="browser-table">
+                    <thead>
+                      <tr>
+                        <th>账号</th>
+                        <th>姓名</th>
+                        <th>角色</th>
+                        <th>手机号</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>admin</td>
+                        <td>系统管理员</td>
+                        <td>管理员</td>
+                        <td>138****0001</td>
+                        <td><span class="status-dot">启用</span></td>
+                        <td>编辑 / 重置密码 / 删除</td>
+                      </tr>
+                      <tr>
+                        <td>operator1</td>
+                        <td>操作员A</td>
+                        <td>操作员</td>
+                        <td>138****0002</td>
+                        <td><span class="status-dot">启用</span></td>
+                        <td>编辑 / 重置密码 / 删除</td>
+                      </tr>
+                      <tr>
+                        <td>viewer1</td>
+                        <td>查看员C</td>
+                        <td>只读查看</td>
+                        <td>138****0003</td>
+                        <td><span class="status-dot amber">停用</span></td>
+                        <td>编辑 / 重置密码 / 删除</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="caption">账号管理示意：角色、状态和密码维护都集中在这一页。</div>
+        </div>
+
+        <div class="stack">
+          <div class="grid-2">
+            <div class="metric">
+              <div class="metric-label">管理员</div>
+              <div class="metric-value">admin</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">操作员</div>
+              <div class="metric-value">operator</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">检测员</div>
+              <div class="metric-value">inspector</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">只读查看</div>
+              <div class="metric-value">viewer</div>
+            </div>
+          </div>
+
+          <div class="soft-card">
+            <h3>角色分配建议</h3>
+            <ul class="mini-list">
+              <li>操作员负责认领项目、开始工序和完成工序。</li>
+              <li>检测员负责在移动端上传和维护检测报告。</li>
+              <li>只读账号只能看进度，不会出现处理按钮。</li>
+            </ul>
+          </div>
+
+          <div class="callout">
+            <h3>账号变更时的顺手检查</h3>
+            <ul class="mini-list">
+              <li>用户停用前，先确认其当前项目是否需要转交。</li>
+              <li>角色改动后，建议让对方重新登录一次移动端。</li>
+              <li>密码重置后，直接通知新密码并提醒首次登录验证服务器地址。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span><strong>Xingye | JNRon</strong> 样品管理系统</span>
+        <span>第 4 / 5 页</span>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="title-row">
+        <div>
+          <div class="eyebrow">Settings</div>
+          <h1 class="page-title">4. 设置页、桌面端更新与移动端版本分发</h1>
+          <p class="lead">设置页同时负责三件事：维护公网访问地址、分发移动端安装包，以及安装桌面端后台更新包。</p>
+        </div>
+        <div class="page-number-pill"><strong>05</strong>Release</div>
+      </div>
+      <div class="rule"></div>
+
+      <div class="stack">
+        <div class="browser-shot">
+          <div class="browser-toolbar">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">http://127.0.0.1:3000/settings</div>
+          </div>
+          <div class="browser-body">
+            <div class="browser-nav">
+              <div class="nav-link">样品管理</div>
+              <div class="nav-link">账号管理</div>
+              <div class="nav-link active">设置</div>
+            </div>
+            <div class="browser-main">
+              <div class="browser-header">
+                <strong>设置</strong>
+                <span>公网地址、二维码、桌面端更新、移动端版本库和历史版本切换都集中在这里。</span>
+              </div>
+              <div class="browser-card">
+                <div class="browser-toolbar-row">
+                  <div class="browser-filters">
+                    <div class="browser-button ghost">刷新设置</div>
+                    <div class="browser-button">安装后台更新包</div>
+                  </div>
+                  <div class="status-dot">自动刷新已开启</div>
+                </div>
+                <div class="split-info" style="margin-top: 12px">
+                  <div class="label-block">
+                    <strong>公网地址</strong>
+                    <span>https://demo.xingye-sample.cn</span>
+                  </div>
+                  <div class="label-block">
+                    <strong>当前生效版本</strong>
+                    <span>android-v1.5.0.zip</span>
+                  </div>
+                </div>
+                <div class="split-info" style="margin-top: 12px">
+                  <div class="label-block">
+                    <strong>服务器配置二维码</strong>
+                    <span><img class="qr-image" src="../../apps/miniprogram/src/unpackage/release/apk/mobile-release-qr-20260517.png" alt="服务器配置二维码示意" /></span>
+                  </div>
+                  <div class="label-block">
+                    <strong>移动端下载二维码</strong>
+                    <span><img class="qr-image" src="../../apps/miniprogram/src/unpackage/release/apk/mobile-release-qr-20260517.png" alt="下载二维码示意" /></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="soft-card">
+            <h3>桌面端更新</h3>
+            <p>上传桌面端更新包后可直接安装，正常情况下不会覆盖本地数据库和上传文件。</p>
+          </div>
+          <div class="soft-card">
+            <h3>服务器地址</h3>
+            <p>移动端依赖公网可访问地址；地址变更后，记得重新生成并分发服务器配置二维码。</p>
+          </div>
+          <div class="soft-card">
+            <h3>移动端版本库</h3>
+            <p>上传 ZIP 更新包后自动生效，也可以从历史版本中一键回切当前分发版本。</p>
+          </div>
+        </div>
+
+        <div class="two-col equal">
+          <div class="callout">
+            <h3>移动端更新包要求</h3>
+            <ul class="mini-list">
+              <li>上传 ZIP，包内固定包含 1 个 APK 和 1 个 <code>update.json</code>。</li>
+              <li><code>update.json</code> 至少包含 <code>versionName</code>、<code>versionCode</code>、<code>releaseNotes</code>。</li>
+              <li>上传成功后，新二维码和下载页会同步切到当前版本。</li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3>日常维护推荐流程</h3>
+            <ul class="mini-list">
+              <li>创建项目并上传图纸。</li>
+              <li>确认操作员和检测员账号可用。</li>
+              <li>发送服务器配置二维码给现场手机。</li>
+              <li>发布新 APK 后，在设置页上传 ZIP 并发送新的下载二维码。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span><strong>Xingye | JNRon</strong> 样品管理系统</span>
+        <span>第 5 / 5 页</span>
+      </div>
+    </section>
+  </body>
+</html>
